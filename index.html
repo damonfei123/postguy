@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>POSTGUY____Damon</title>
+    </head>
+    <body>
+    <div>
+        <h1 class='title'>POSTGUY</h1>
+        <div class='row'>
+            <span class='item'>请求地址：</span>
+            <span><input type="text" id="url" value="" ></span>
+            <span class='tips'>*注意端口哦^_^</span>
+        </div>
+        <div class='row'>
+            <span class='item'>请求方式：</span>
+            <span>
+                <select id="query">
+                    <option value="post">post</option>
+                    <option value="get">get</option>
+                </select>
+            </span>
+        </div>
+
+        <!--请求方式-->
+        <div class='row' id='queryFrequency'>
+            <span class='item'>请求频率,每：</span>
+            <span><input type="text" class='number' id='querySec' value="1">s/次，共</span>
+            <span><input type="text" class='number' id='queryCount' value="1">次</span>
+            <span class='tips'>*0代表无限次</span>
+        </div>
+
+
+        <!--生成参数-->
+        <div class='row'>
+            <span class='item'>请求参数key：</span>
+            <span><input type="text" id="queryParam" value=""></span>
+            <span><button id='buildParam'>生成参数项</button></span>
+            <span><button id='clearParam'>清空参数项</button></span>
+            <span class='tips'>*参数以英文逗号隔开</span>
+        </div>
+
+        <!--请求参数-->
+        <div>
+            <h3 class='item'>请求参数:</h3>
+            <div id="paramContainer">
+            </div>
+        </div>
+
+
+        <!--请求-->
+        <div class='row'>
+            <button id='submit' class='submit'>发起请求</button>
+        </div>
+
+        <div id='queryRes' style="">
+            <h3 class='item'>请求结果:</h3>
+            <div id="queryContainer">
+            </div>
+        </div>
+
+        <div id='showQueryRes'>
+        </div>
+
+        <!--隐藏请求数据-->
+        <div id="hideRes" style='display: none;'>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/fun.js"></script>
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/postguy.js"></script>
+    </body>
+</html>
