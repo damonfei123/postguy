@@ -175,7 +175,7 @@ $(function(){
         });
         str = str.substring(0,str.length-1);
         str += '}';
-        return str;
+        return str.length == 1 ? '' : str;
     }
 
     var getParamData = function(){
