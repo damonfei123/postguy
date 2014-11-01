@@ -13,6 +13,7 @@ $(function(){
     var $querySec       = $('#querySec');
     var $queryCount     = $('#queryCount');
     var $hideRes        = $('#hideRes');
+    var $queryContainer = $('#queryContainer');
     var interval        = null;
 
 
@@ -138,6 +139,9 @@ $(function(){
                     'type': query,
                     'data': data
                 });
+                if (queryCount == 1) {
+                    $queryContainer.find('.single:last').trigger('click');
+                };
                 if (decrease) { i++; };
             },
             error:function(){
