@@ -95,16 +95,16 @@ $(function(){
     /*发起请求*/
     $submit.click(function(){
         var url     = $url.val();
-        if (!/^http:\/\//.test(url)) {
-            url     = "http://" + url;
-        };
         var query   = $query.val();
         var querySec= $querySec.val();
         var queryCount = $queryCount.val();
         var data    = getParamData();
-        if (query == '' || querySec == '' || queryCount == '') {
+        if (url == '' || query == '' || querySec == '' || queryCount == '') {
             alert('请求参数不完整，请检查!!!');
             return false;
+        };
+        if (!/^http:\/\//.test(url)) {
+            url     = "http://" + url;
         };
         $(this).disable('请求中..');
         //都存储cookie
