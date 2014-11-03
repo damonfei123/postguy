@@ -51,8 +51,8 @@ $(function(){
     $queryParam.val(getCookie(cookieKey));
     $url.val(getCookie('url'));
     $query.val(getCookie('query'));
-    $querySec.val(getCookie('querySec'));
-    $queryCount.val(getCookie('queryCount'));
+    $querySec.val(getCookie('querySec',$querySec.val()));
+    $queryCount.val(getCookie('queryCount', $queryCount.val()));
 
     $buildParam.click(function(){
         var key = $.trim($queryParam.val());
@@ -94,7 +94,6 @@ $(function(){
 
     /*发起请求*/
     $submit.click(function(){
-        $(this).disable('请求中..');
         var url     = $url.val();
         if (!/^http:\/\//.test(url)) {
             url     = "http://" + url;
@@ -103,6 +102,11 @@ $(function(){
         var querySec= $querySec.val();
         var queryCount = $queryCount.val();
         var data    = getParamData();
+        if (query == '' || querySec == '' || queryCount == '') {
+            alert('请求参数不完整，请检查!!!');
+            return false;
+        };
+        $(this).disable('请求中..');
         //都存储cookie
         batchSetCookie({
             url     : url,

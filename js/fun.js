@@ -24,10 +24,10 @@ function batchSetCookie(data){
         setCookie(key, item);
     });
 }
-function getCookie(name)//取cookies函数
+function getCookie(name, def)//取cookies函数
 {
     var arr = document.cookie.match(new RegExp("(^| )"+name+"=([^;]*)(;|$)"));
-    if(arr != null) return unescape(arr[2]); return '';
+    if(arr != null && arr[2] != '') return unescape(arr[2]); return def;
 }
 function delCookie(name)//删除cookie
 {
