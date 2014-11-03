@@ -100,7 +100,8 @@ $(function(){
         var queryCount = $queryCount.val();
         var data    = getParamData();
         if (url == '' || query == '' || querySec == '' || queryCount == '') {
-            alert('请求参数不完整，请检查!!!');
+            var html = "<h3 class='red'>请求参不完整，请检查!!!</h3>";
+            show($showQueryRes, html);
             return false;
         };
         if (!/^http:\/\//.test(url)) {
