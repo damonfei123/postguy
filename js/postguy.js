@@ -170,7 +170,7 @@ $(function(){
             "请求方式:"+param.type + "</div><div class='resRow'>" +
             "请求参数:" + getJsonToStr(param.data) + '</div>';
         $("<div id='key"+i+"'>"+sSaveHTML +"<h3>返回结果:</h3><div class='resRow retRes'>" + "</div></div>").appendTo($hideRes);
-        $hideRes.find('.retRes').text(html);
+        $hideRes.find('.retRes').html(html);
     }
 
     var getJsonToStr = function(json){
